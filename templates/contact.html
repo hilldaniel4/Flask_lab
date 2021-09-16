@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/app.css')}}">
+    <title>Contact Me</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div class="contact-body">
+        <h1>Contact Dan</h1>
+        <h2>You can contact Dan or learn more about him from the following:</h2>
+        <button type="button" class="btn btn-outline-secondary" onclick="document.location='https://github.com/hilldaniel4'">Github</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="document.location=''">This site</button>
+        <a href="mailto:hill_daniel4@columbusstate.edu">Email</a>
+    </div>
+    {% endblock %}
+    <p>I am writing some information about myself that people can see. </p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -7,8 +7,11 @@ def hello():
 
 @app.route("/about")
 def about():
-    name = request.args.get('name') if request.args.get('name') else "Hello World!"
-    return render_template("about.html", aboutName=name)
+    return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 @app.route("/<name>")
 def hello_name(name):

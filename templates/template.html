@@ -9,22 +9,34 @@
     <title>Template</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand">Dan's Flask App</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="{{ url_for('hello') }}">Home</a>
-              <a class="nav-link" href="{{ url_for('about') }}">About</a>
+              <a class="nav-link active" aria-current="page" href="{{ url_for('about') }}">About</a>
+              <a class="nav-link active" aria-current="page" href="{{ url_for('contact') }}">Contact Me</a>
             </div>
           </div>
         </div>
       </nav>
+
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1>Daniel Hill</h1>
+          <img class="hero-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACjCAMAAAA3vsLfAAAA21BMVEX///8KMlX44eLfa3PSIDAAFkMALlPJztMAAD0AGETCx84AJUs4TmouRGAAGEbk6OsAADadpK3z9vgAADoAFESttL1odoje4eRdbH8ACj+VoKwAHEcAKlAAJU6ts73QABRxgJHxxcc9VW+3vsYAADJ4h5ZRZ30AC0Hu8vSfqbTh5ukVOloAACvQ1drOAABHXnWMmabPByExQ2AlOliEj5xueopUYniQmKRDTmd8hZUAG0JSYXSNnKf81tfuqajmg4jVSFD68O/ruLnYWl/jlpnfdnzVP0jjmpvQABsfIWl5AAAM/UlEQVR4nO2dCXubOBqARRoDxgcOiMMcLmMMRiYEd4dsdnpsz9np//9Fq4ND+EiyeZqx/aze9om5jMXLhyQkGQMgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgexTBOnYKLpPrj1Cm4RBzVLE6dhgvkH7L8+6nTcFEUiqIUVRgEYQXI5KnTcyFIEBP66MGfO6M5DE6dngtBIgT/AmASLFEojU6dngvBJ9oGGQCbefggSetTp+dCmGNr85hMoYFcCm3Pw1AlaXTPpv8ZSJKZnTY9F0Jm4mirp42RLM31kybnUnBMaU4qHQaJMm0ur0QN5Dnorl/hmKvSMtAAuP/wsDl1ii6DeH2DwwxYQIcauHk4dXIuBWt+4+ALVFPARgI31amTcymgNcLhBhRc4V3iaBMF6dMYlj3yRwsblwwkT7PBjWdD2xJNb49R2NDHNbUQ/aGwBQ9YWxQEPnSV06bsjCmWMKD3o6MbJ6RLNINqI7eocCzEHeR+LktSrQ0s3muGQWoetTZJkueuuFT30OVQaghxibCp7m/I7UGrDdsciRrcLspc6mlr8DptEq7GCfoogyPa3E7bUGjb5Zg2Jy5loe0onbZAHt3wa+xQaDtKp80uw562BzcX2o7Rassf3FEZNdxbAFVC21E6beg+dG+8Bg1YN78LbcdotMkT1nDEM5aFtiNw2qy50PZcdrQVwMmyjcHaw4W2o+xcpLebD4uF66zoOqHtKJy2PwY3YK671sJ2hnSd0HYUThsMhbbnwmlTR0LbcxHaXoTQ9iKEthchtL0Ioe1FCG0vQmh7EULbixDaXsSOtlv9w8JynRldJ7QdZUdb5gAF/xMNR0+wo60H0yaPZkLbLk9oC6GUfrTEULddHtcWPDjg078/fzpN2s6YR7VBBYCru593v50mbWfMUW2FV8ryewOAT2/fCm27HNKWaQ/pAI5GUCJfJboS2vZpu5extvAG6JrnBuYwDIL3pssK0C/XQtsenbZiIP0ezrExWR4NQjuux1C+eSe07dMNnRmyi3U0hMuH9ntDX7+8uxba9uHHtxFl40rjhup++4mtCW37NNoCH4blg9Ib3Xz1/e31tdB2CKwNB9kgtxfOzhrj8931tdB2GO02dD3twN3Tj7t310LbMbKDg+e/ctKEtmdy9ScvTWh7Fr996Uu7vhb3pE9x9eP67fUOP//z9dTJOmu+ftsLtOvrd3c/Tp2us+bbm7c/d51haX+KUDvOb9/v3h4ItOsfQtqjfPrry93dz3fvqDv88vPu7suPK7oKIdEo/hhX3/79+c2b79/fvPn817erZqm33SanTNWFUqGteErD/06WbEWHn0AgEAgE/68YRWzFylk9wg+nSHPO+uEqRWqGy3IZzALXOhN1Hsxte7Ly8/jUKTmKvUpZ36WOAqhaJ04NpZzTpx85+RQd2+TEgWjkZpc0o4T16c2QXZZR87QwbxHHFqo7hg0652X1dhZeQ/704hTFMdIAXkxWopg+khIvi1G9+xjvAhE1TpWW7jbu9zokar3ZBqfNQBYBvzle4FfEHidVLNkWOorrleTVQo7hWfW0tXjFUB3DLT8r04/K7FkSFwqazBIqTknmsNRqMYaWwsGy7ik2lOV6qSjWfOBye4lNfHk5QNmqsIzjyp+Rh7dZ8L2J6q6/AqlrtCGCLGcTj9WcT4MBYRNLKQL6ykyrqkqhtK2qJFTZTWyksj0ppmnjtSUc47/RXF0AxYbzLUJekpvLX+ipz9bvpRho5B5RUZsnXVlmyJLnD7mHl+qQm4vpw/yjEeQ6Q8elzy72fEiDIx3YZJsw7TbJS/ynmrGYLcd8GooBbJqTtljbjJ7JeMgk5PQsG3AU0VmF/ZSAN6WzGbSodfZ2b/IMAS8iG4T7mZky6yJHM5mOcMBZwdq6S7JYkekkD7o3Kctqzm7RJ2xIcwbn+DxEftTto8QiDdOu99E7dw4MP3If5tMXa8q0sQdbIjuYZuyj6NJaG4gWeK8DWKeuHxG/kG0I99oJjVHI5bdVSD/8uDadaosQF24lvqhZvlJrA+M13ijhtdk2eeRWrdrgwhATSFOv2z9T22hTaLRJmTukEwXLYhptVsxre7XibRzsn5HtIOLmjKFPiowdbdNOW2aSaVuxwybc9BBEO9pKEjKJz7VJJvf4mKG/O8yBoqmSP9k55kYbpZgABfKPwW+00RS32l4LJwzSvYWy3yuB7BHJeI5rM5g2bTNowi1BIKpL5MmUajNWRH1PW0WCSApGByMi9kP5vbzlL4SeNhfvbjzk3npIW/Vq7e2KH0S7yzaDae/R1VboG/sXaZckQyWJdDXg1uFm4HIwguyYaLRlcb4gM8mQa8rdEm2OP/JzdKAKZmxHvjziC3lem0FKEmvI5fgHtG2C19M2DOz9ZYPelaP5cPO0tlLDOTkLNw/HVKtNHsrhbBbRExHtaQNZNAhDvzpUd7XyoeSX3SynDdFLRILdE0F72qAkyfJ0Zr5ajbjw5fHuMsWf7mrTn9a2xFHlhlTFSCfaaHzV0WZNVVoBGXLRs63PV7YN8RV5MDOKpcBvRfPaclKRq8ajLoPpa6PVvkx6vU6xXB7uLtpM+3lb7JNfbulpy+CwO5NM21gDdbjFHwCnjeVtWTDEIZhMeW337STyDxRMlLHcFuqcNmWt0duC4bxN06G87RW/YFOF/t4diDTqXbgf35Msq6fNmE67JGUqObKc6ElJuE1o7ReyO7amJLV8fPxbPq9KuOmNPzjcE+MM20KR0+ZG9WtXofl7S1IcN9JOVToG3nufP0+TNclCetpADrubSIVGikSOu4Bz3aGzu9oycvwWjLpdjPnT5c35AlXvbpKltlrZaTOaX1soYHv2jmh7tR+/QzDs9VTe44spD7lwU0xaPnbaPHyECXeYEQ2bkOpJwySia5Idbbj2Z4BsLrXv0kmMFk2FJO590W+jtpPd1dtpQ36zbOI3IXtEW/Rq3YnVnL907JVFanOwPd9GMKFnrNNGMn9OQEGvUcDaLAoos5+wSupqfqNNUSOytGtsScmHOo2ACvJJ0mfNZlo71d6T4gjsiglfrqd2tDVBKB+sTf8SLF9dspLcQL5Pj3KTz+o4UEJWBTCmYS3XmpFLpFgvWdIsdiu9Mdnq0me6ypAdRsgqOIXPCmx3xaJUX9JC0FFZTU+57WWwOhywAqVQu/tcFNaBh9Q2hAw/rNOZcK0EmyE7CrBJpVdslTM8aeWntjtZhe2dIJJN20NJXreuRvl8aEqp65a4EkY9ZfbK9VAUpvR6iCS4tkl2V9yShKLUnKquB5LxeqpKbiq1O47DvELbZd0+os/U0dZCadh/JHumwlm+xZupXaxF/mBdYkdWasJJHW5JuZ6ay4rc2M+h6rITl+G0TM3xcjnxV+qrNYEwdA15KO5F9CZeWE0LG9CzzDCMjKLXZ9DQFovm6xk6Xs2WUwF4G7y1ThfjN+j8OXcsZHUf5MQLfrZdrFmeZ3E3K80eAUlIpnefSmf0Zm23tOalQgQCgUAg+BVcXQCndnSANxfAqR0JBAKBQPA4Gf1P/rRNpe2rATJuM24x29Ro35KRCa6plWyye5tdFFlvfTfN3ty8nc7RvZ/zjboHaa88QGu3aQi3liqddNKuZQcF7VA0JV2zBjw0i+rGDUvKt9to3fYuK+U6qeSUaxmxytiatE258WTd9i0v5SQp5Sopb9nmeqLmZPeeeqiD9Wwo6xbyZde+EwcyTbHTdWOChOver5s09W51RSaNqJ1XZngHk64Lz6EjE7r+K9RNlkY9dihtRN7TFuR48YKD+ftotNldr4ulTWgDoM6NaeO1bVkbd9I1mFFtoJtXVthBvGrDBdH9dSI4bSSIqbb22SsGbUp+vcFrv4QyYq9RF22WkkFiTOe6anhtmUlabw2u55pq49pwFTocoetqUVb9r6yhfsfpzkg1NNPBxzP/kc5GW9JpQxpwyHHqUbcZrw3ck6P2uA6CahJbFdfVo+ADL/guWs/0+ZEyj2sDuWvsD/k5L8qml6OnDcS3COfO3WY9bc4tvh75YRLV0nFiTps2T8az3oDdbDs0O41PaCvU5bn/QGejLeoSSrQBtFIy7srqaQNLF1j8IG96kXLRpOBsLdz9Bu79rN3iCW0gPfdgA0md73OlJrv8ErXgByf0DkSbZb0smxUJoA1Ykrdpt10RwbpP1u2Cp7RFLjhzihWNgYKLjTrXSiEXUH1tQFp6/CzT5rTb0wqI23XSs2HzaleyXrw2EOdatvG4dGZLm11Nk07bZhL0+u3Qiq+L6ksYaxpqB6Rl1W2MbwSC9qeXLVUx9LQdIaGnKj80UU/XvZGKYDPOzz1vIz8M7yHeiaIo7Cgybpi9UvTGWxi9fnZNKRRF09pHuBVaoZHjbr8EYsTIQzq/fWz03h737qTioni10R0CgUAgEAgEAoFAIBAIBAKBQCAQCASH+C/2NUJHUszEKgAAAABJRU5ErkJggg==">
+          <h4>Student and IT Intern</h4>
+        </div>
+      </div>
       {% block content %}
       {% endblock %}
+      <footer>
+          <h7 class="foot">Daniel Hill made this flask app.</h7>
+      </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </body>
 </html>
